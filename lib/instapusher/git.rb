@@ -16,6 +16,7 @@ module Instapusher
     def project_name
       result = `git config remote.origin.url`.chop!.scan(/\/([^\/]+)?$/).flatten.first
       result.sub!(/\.git$/, '') if result
+      result ||= File.basename(Dir.getwd)
       result
     end
   end
