@@ -1,4 +1,5 @@
 class SpecialInstructionForProduction
+
   def run
     question = "You are deploying to production. Did you take backup? If not then execute rake handy:heroku:backup_production and then come back. "
     STDOUT.puts question
@@ -14,4 +15,5 @@ class SpecialInstructionForProduction
       abort "Please answer yes or no"
     end
   end
+
 end
