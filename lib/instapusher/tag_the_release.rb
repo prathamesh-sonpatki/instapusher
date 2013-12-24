@@ -1,6 +1,8 @@
 module Instapusher
   class TagTheRelease
 
+    attr_reader :branch_name, :debug
+
     def initialize branch_name, debug
       @branch_name = branch_name
       @debug = debug
