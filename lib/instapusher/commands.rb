@@ -55,7 +55,7 @@ module Instapusher
     end
 
     def production?
-      branch_name.intern != :production
+      branch_name.intern == :production
     end
 
   end

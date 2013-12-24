@@ -1,7 +1,7 @@
 module Instapusher
   class JobSubmission
 
-    attr_reader :options, :debug, :job_status_url
+    attr_reader :options, :debug, :job_status_url, :response_body
 
     DEFAULT_HOSTNAME = 'instapusher.com'
 
