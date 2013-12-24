@@ -19,7 +19,7 @@ module Instapusher
 
     def deploy
       verify_api_key
-      ::SpecialInstructionForProduction.new.run if production?
+      SpecialInstructionForProduction.new.run if production?
 
       submission = JobSubmission.new(debug, options)
       submission.submit_the_job
