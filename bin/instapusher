@@ -22,10 +22,17 @@ OptionParser.new do |opts|
   opts.on("--debug", "Show debug messages") do |v|
     options[:debug] = v
   end
+
+  opts.on("--api-key", "Setup Instapusher api key") do |v|
+    options[:api_key] = v
+  end
+
 end.parse!
 
 if options[:version]
   puts Instapusher::VERSION
+elsif options[:api_key]
+  Instapusher::Configuration.ask_for_and_write_api_key
 else
   Instapusher::Commands.new(options).deploy
 end
