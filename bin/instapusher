@@ -31,8 +31,10 @@ end.parse!
 
 if options[:version]
   puts Instapusher::VERSION
+
 elsif options[:api_key]
   Instapusher::Configuration.ask_for_and_write_api_key
+
 else
   Instapusher::Commands.new(options).deploy
 end

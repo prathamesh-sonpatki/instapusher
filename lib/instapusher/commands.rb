@@ -48,7 +48,9 @@ module Instapusher
       @api_key = ENV['API_KEY'] || Instapusher::Configuration.api_key(debug) || ""
 
       if @api_key.to_s.length == 0
-        abort "Please enter instapusher api_key at ~/.instapusher "
+        puts ''
+        abort "No instapusher API key was found. Please execute instapusher --api-key to setup instapusher API key."
+
       elsif debug
         puts "api_key is #{@api_key}"
       end

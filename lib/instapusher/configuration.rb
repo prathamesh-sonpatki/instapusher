@@ -22,6 +22,9 @@ module Instapusher
     end
 
     def ask_for_api_key
+      puts ""
+      puts "Note: Your instapusher API key is available at http://www.instapusher.com/my/api_key"
+      puts ""
       puts "Enter your Instapusher API key:"
       api_key = ask
       api_key
@@ -33,6 +36,9 @@ module Instapusher
       File.open(File.join(Dir.home, ".instapusher"), "w") do |file|
         file.write instapusher_config.to_yaml
       end
+
+      puts ""
+      puts "You are all set. Start using instapusher."
     end
 
     def ask
