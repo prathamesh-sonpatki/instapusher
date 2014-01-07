@@ -21,6 +21,24 @@ module Instapusher
       end
     end
 
+    def ask_for_api_key
+      puts "Enter your Instapusher API key:"
+      api_key = ask
+      api_key
+    end
+
+    def ask_for_and_write_api_key
+      api_key = ask_for_api_key
+      instapusher_config = {"api_key" => api_key}
+      File.open(File.join(Dir.home, ".instapusher"), "w") do |file|
+        file.write instapusher_config.to_yaml
+      end
+    end
+
+    def ask
+      $stdin.gets.to_s.strip
+    end
+
     def method_missing(name, *args, &block)
       self.load
       @_settings[name.to_s]
