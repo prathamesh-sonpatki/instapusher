@@ -38,6 +38,7 @@ module Instapusher
       @options ||= begin
         { project: project_name,
           branch:  branch_name,
+          owner: Git.new.repo_owner,
           quick:   @quick,
           local:   @local,
           api_key: api_key }

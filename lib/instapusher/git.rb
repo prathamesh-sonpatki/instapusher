@@ -19,5 +19,13 @@ module Instapusher
       result ||= File.basename(Dir.getwd)
       result
     end
+
+    def repo_owner
+      string = `git remote -v | grep fetch | grep origin`
+      regex = /.*:(.*)\/.*/
+      match_data = string.match(regex)
+      match_data.to_a.last
+    end
+
   end
 end
