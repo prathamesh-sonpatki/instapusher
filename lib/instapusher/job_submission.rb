@@ -21,7 +21,7 @@ module Instapusher
     end
 
     def feedback_to_user
-      puts 'The appliction will be deployed to: ' + response_body['heroku_url']
+      puts 'The application will be deployed to: ' + response_body['heroku_url']
       puts 'Monitor the job status at: ' + job_status_url
       cmd = "open #{job_status_url}"
       `#{cmd}`
