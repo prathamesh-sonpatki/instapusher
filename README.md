@@ -20,6 +20,20 @@ Then execute this command.
 
 It detects project name and a branch from the git repo and starts deploying your project.
 
+### Running background jobs and other rake tasks
+
+Instapusher does not create workers on heroku for your project.
+Background jobs or rake tasks should be run manually from the console.
+
+``` sh
+heroku run rake <TASK_NAME> --app <APP_NAME_GIVEN_BY_INSTAPUSHER>
+```
+
+For eg. to run delayed job workers
+
+``` sh
+heroku run rake jobs:work --app my-awesome-app-42-add-devise-authentication-ip
+```
 
 ## Setup Instapusher server
 
